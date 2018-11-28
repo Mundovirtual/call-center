@@ -1,0 +1,10 @@
+div.row div.col-xl-3 div.propiedades{
+	text-shadow: 3px 1px 1px #605352;
+	filter: drop-shadow(3px 3px 3px #444);
+}
+
+div.row div.col-xl-3 div.propiedades:hover{
+	text-shadow: 3px 2px 2px #605352;
+	filter: drop-shadow(6px 6px 6px #444);
+}
+
