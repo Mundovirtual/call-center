@@ -1,4 +1,12 @@
- 
+<?php 
+  require_once("../model/routing.php");
+  $enrutador = new enrutador();
+  if (!isset($_GET['talent'])) {
+      $_GET['talent']="";      
+  } 
+
+
+ ?> 
     
 <!DOCTYPE html>
 <html>
@@ -86,18 +94,28 @@
 
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
           
-            <li><a href="../view/index.php?cargar=10" aria-expanded="false"> 
-                <i class="fas fa-tachometer-alt"></i>Estado del Concurso </a>
+            <li><a href="../view/index.php?sms=1" aria-expanded="false"> 
+                <i class="fas fa-tachometer-alt"></i>dashboard </a>
             </li>                  
             <li>
-                <a href="../view/index.php?cargar=11" aria-expanded="false"> 
+                <a href="../view/index.php?sms=2" aria-expanded="false"> 
                   <i class="fas fa-phone"></i>Registros</a>
             </li>
         
             <li>
-              <a href="../view/index.php?cargar=5" aria-expanded="false"> 
-                <i class="fas fa-comment-smile"></i>
+              <a href="../view/index.php?sms=3" aria-expanded="false"> 
+                <i class="fas fa-comment-alt"></i>
               Enviar SMS</a>
+            </li> 
+            <li>
+              <a href="../view/index.php?sms=5" aria-expanded="false"> 
+                <i class="fas fa-database"></i>
+              Ip's</a>
+            </li> 
+            <h4 class="sidenav-heading">Mi perfil</h4>
+            <li>
+              <a href="../view/index.php?sms=4" aria-expanded="false"> 
+                <i class="fas fa-user"></i>Mi perfil</a>
             </li> 
           </ul>
         </div>
@@ -148,7 +166,14 @@
          <div class="right_col" role="main" >
           <div>
           
+            <?php 
+           if ($enrutador->validarGET($_GET['sms'])) { 
+                    $enrutador->cargarVista($_GET['sms']);
+                 }else{
+                    include 'vistas/dashboard.php';
+                 } 
 
+             ?>
          
           </div>
 
