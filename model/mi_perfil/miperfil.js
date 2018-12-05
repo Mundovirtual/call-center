@@ -16,6 +16,7 @@
 			$("#nombre").val(respuesta.Nombre);
 			$("#Usuario").val(respuesta.Usr);
 			$("#Contrasena").val(atob(respuesta.Psw)); 
+
 		})
 		.fail(function() {
 			console.log("error");
@@ -47,7 +48,7 @@
 					data: {'id': id_editar,'nombre':nombre_editar,'usuario':usuario_editar,'psw':psw_editar},
 				})
 				.done(function(respuesta) {
-					if (respuesta.Mensaje=="0") {
+					if (respuesta.Editar=="0") {
 
 						alertify.success('Datos actualizados');
 						$("#EditarPerfil").text('Editar');  
@@ -57,7 +58,7 @@
 
 						habilitarInput();
 						$("#EditarPerfil").text('Guardar');
-						alertify.error(respuesta.Mensaje);
+						alertify.error(respuesta.Editar);
 
 					}
 				})

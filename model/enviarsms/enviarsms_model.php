@@ -1,8 +1,10 @@
 <?php  
-require_once("../../class/ip_cpntroller.php");
-require_once("../../class/telefono_controller.php");
-	$mostrar=new ip();
+	require_once("../../class/ip_cpntroller.php");
+	require_once("../../class/telefono_controller.php");
+ 
 
+	$mostrar=new ip();
+	$url=[];
 	if (isset($_POST['cargar'])) {
 
 		$vertabla=$mostrar->index();
@@ -40,42 +42,24 @@ require_once("../../class/telefono_controller.php");
 			$msj="Mensaje: Mínimo 3 caracteres ";
 			$Aux="1";	 
 		}elseif ($Aux=='0') {
-			/*$msj="0";
+			$msj=0;
+			$msj="0";
 			$mostrar=new telefono();
 			$EnviarSMS=$mostrar->index();
 		 
 			$MensajeUrl= urlencode($mensaje);
-			foreach ($EnviarSMS as $key) {
+
+
+			 
+			 foreach ($EnviarSMS as $key) {
 				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
-			 	header('Location:'.$enviando.'.');
-			  
-
-			}*/
-			$url[0]="https://docs.presta-module.com/fr/listado-de-todas-las-url/"; 
-			$url[1]="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSDidNotSucceed?utm_source=devtools&utm_medium=firefox-cors-errors&utm_campaign=default";
-			$url[2]="localhost/phpmyadmin/sql.php?db=hacky&table=proyecto&pos=0";
-			$url[3]="https://es.ccm.net/faq/537-php-como-direccionar-a-otra-pagina-web";
-			$url[4]="";
-			$url[5]="";
-			$url[6]="";
-			$url[7]="";
-			$url[8]="";
-			$url[9]="";
-			$url[10]="";
-			$url[11]="";
-			$url[12]="";
-			$url[13]="";
-			$url[14]="";
-			$url[15]="";
-			$url[16]="";
-			$url[17]="";
-			$url[18]="";
-			$url[19]="";
-			$url[20]=
-
+			 	 	
+				   $url[]=$enviando;
+			} 
+	 
 		}
- 		echo  json_encode(array( 'Enviar'=> $msj)); 
-
+ 	 	echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
+ 	 
 	}
 
  

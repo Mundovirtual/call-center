@@ -1,8 +1,8 @@
 <?php 
   require_once("../model/routing.php");
   $enrutador = new enrutador();
-  if (!isset($_GET['talent'])) {
-      $_GET['talent']="";      
+  if (!isset($_GET['sms'])) {
+      $_GET['sms']="";      
   } 
 
 
@@ -94,9 +94,7 @@
 
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
           
-            <li><a href="../view/index.php?sms=1" aria-expanded="false"> 
-                <i class="fas fa-tachometer-alt"></i>dashboard </a>
-            </li>                  
+                            
             <li>
                 <a href="../view/index.php?sms=2" aria-expanded="false"> 
                   <i class="fas fa-phone"></i>Registros</a>
@@ -169,8 +167,6 @@
             <?php 
            if ($enrutador->validarGET($_GET['sms'])) { 
                     $enrutador->cargarVista($_GET['sms']);
-                 }else{
-                    include 'vistas/dashboard.php';
                  } 
 
              ?>

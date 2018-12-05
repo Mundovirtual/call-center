@@ -31,7 +31,7 @@ function editar_ip(){
 	.done(function(respuesta) {
 		if (respuesta.Enviar='0') {
 			$("#modal_editar_ips").modal('hide');
-			alertify.success("Datos actualizados");
+			alertify.success("Dato actualizado");
 			CargarTabla();
 		}else{
 			alertify.error(respuesta.Enviar);
@@ -128,7 +128,7 @@ function Eliminarip(){
 	})
 	.done(function(respuesta) {
 		if (respuesta.Eliminar=='0') {
-			alertify.success("Registros Eliminado");
+			alertify.success("Registro Eliminado");
 			$("#modal_eliminar_ips").modal('hide');
 			CargarTabla();
 

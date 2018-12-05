@@ -53,22 +53,27 @@ $("#MostrarPsw_button" ).on( "click", function() {
 });
  
 function enviar(){
-	 
-	 
+	 	 
 	$.ajax({
 		url: '../model/enviarsms/enviarsms_model.php',
 		type: 'POST',
 		dataType: 'json',
 		data: {'mostrar_ip':$("#mostrar_ip").val(),'mostrar_usr':$("#mostrar_usr").val(),'mostrar_psw':$("#mostrar_psw").val(),'tiempo':$("#tiempo").val(),'Mensaje_Enviar':
-	$("#Mensaje_Enviar").val()		},
+	$("#Mensaje_Enviar").val()},
 	})
 	.done(function(respuesta) {
-		 if (respuesta.Enviar !='0') {
+	  
+		  if (respuesta.Enviar !='0') {
 		 	alertify.error(respuesta.Enviar );
 		 }
 		 else{
 		 	alertify.success("Enviando.....");
-		 }
+		 	   
+		 	$.each(respuesta.arrayUrl, function(i, item) {
+		 		console.log(item);
+			     window.open(item);			     
+			});
+		 } 
 	})
 	.fail(function() {
 		console.log("error");
@@ -78,3 +83,5 @@ function enviar(){
 	});
 	
 } 
+
+     

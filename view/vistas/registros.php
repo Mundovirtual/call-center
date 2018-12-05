@@ -17,24 +17,25 @@
 
  
 
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table">
+	<div class="row ">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-9 table-responsive">
+
+			<table class="table table-bordered table-dark" id="tablaTelefono">
 				  <thead>
-				   
+				   <th scope="col">#</th>
+				   <th scope="col">Telefono</th>
+
 				  </thead>
 				  <tbody>
-				    <tr>
-				     
-				      <td>9000119355</td> 
-				      <td>9000119356</td> 
-				      <td>9000119357</td> 
-				      <td>9000119358</td> 
-				      <td>9000119355</td>  
-				    </tr>
+				    
 				     
 				  </tbody>
 				</table>
+				<caption>Lista de telefonos</caption>
+		</div>
+		<div class="col-md-2">
 		</div>
 	</div>
 </div>
@@ -51,10 +52,11 @@
         </button>
       </div>
       <div class="modal-body">
-         <div class="form-group row">
+        <form id="datos_Tel" name="datos_Tel">
+        	 <div class="form-group row">
 		    <label for="colFormLabel" class="col-sm-2 col-form-label fas fa-plus-circle"> Telefono</label>
 		    <div class="col-sm-10">
-		      <input type="tel" class="form-control" id="" placeholder="492 666 55 66">
+		      <input type="tel" class="form-control" id="telefono_teclado" name="telefono_teclado" placeholder="492 666 55 66">
 		    </div>
 		  </div>
 		  <div class="input-group mb-3">
@@ -62,17 +64,18 @@
 			    <span class="input-group-text"><i class="fas fa-file-excel fa-2x"></i></span>
 			  </div>
 			  <div class="custom-file">
-			    <input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01">
-			    <label class="custom-file-label">importar de excel o txt</label>
+			    <input type="file"  id="excel" name="excel" accept=".xlsx,.xlsm,.csv" > 
 			  </div>
 			</div>
+        </form>
 
  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary" onclick="guardar()">Save</button>
       </div>
     </div>
   </div>
 </div>	
+<script src="../model/telefono/telefono.js"></script>
