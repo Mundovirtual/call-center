@@ -25,7 +25,7 @@
 		$user=$_POST['mostrar_usr'];
 		$psw=$_POST['mostrar_psw'];
 		$time=$_POST['tiempo'];
-		$mensaje=$_POST['Mensaje_Enviar'];
+		$mensaje=filter_var($_POST['Mensaje_Enviar'],FILTER_SANITIZE_STRING);
 		$msj="";
 		$Aux="0";
 
@@ -61,7 +61,6 @@
  	 	echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
  	 
 	}
-
  
  
  ?>
