@@ -88,7 +88,7 @@ $("#MostrarPsw_button" ).on( "click", function() {
 
 });
  
- 
+  ventana = "";
 function enviar_DB(){	 	 
 	$.ajax({
 		url: '../model/enviarsms/enviarsms_model_all.php',
@@ -109,7 +109,8 @@ function enviar_DB(){
 		 	alertify.success("Enviando.....");		 	   
 		 	 $.each(respuesta.arrayUrl, function(i, item) {
 		 		console.log(item);
-			     window.open(item);			     
+			    window.open(item);
+			     
 			}); 
 			 
 		 } 
@@ -122,6 +123,10 @@ function enviar_DB(){
 	});
 }
  
+ 
+ 
+
+
 
 function cargarExcel(){
 	var inputFileImage = document.getElementById("excel");
