@@ -1,4 +1,5 @@
-<?php 
+<?php
+   
 require_once("../../class/administrador_controller.php");
 
 	$mostrar=new admin();

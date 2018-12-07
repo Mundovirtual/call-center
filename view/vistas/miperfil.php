@@ -1,4 +1,7 @@
- 
+<?php 
+
+require_once("../model/login/security.php");
+ ?>  
 <div class="row justify-content-center">
 		<div class="col-md-4">
 			<div class="card">

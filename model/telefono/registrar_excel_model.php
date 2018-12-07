@@ -1,6 +1,5 @@
 <?php 
-	set_time_limit(4800); 
- 	
+	set_time_limit(4800);  
 	require_once("../../class/telefono_controller.php");
 	require_once("../../PHPexcel/Classes/PHPExcel/IOFactory.php");
 	require_once("../../class/conexion.php");

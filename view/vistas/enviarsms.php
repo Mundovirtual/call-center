@@ -1,5 +1,5 @@
 <?php 
-	include_once("../login/securityHacker.php"); 
+	require_once("../model/login/security.php"); 
  ?>
 <div class="container-fluid">
 	<div class="row">

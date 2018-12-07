@@ -1,3 +1,7 @@
+<?php 
+require_once("../model/login/security.php");
+ ?> 
+ <link href="../pace-master/themes/pace-theme-barber-shop.css" rel="stylesheet" />
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -79,3 +83,5 @@
   </div>
 </div>	
 <script src="../model/telefono/telefono.js"></script>
+ 
+   

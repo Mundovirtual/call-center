@@ -1,4 +1,4 @@
-<?php 
+<?php  
 	require_once("../../class/telefono_controller.php");
 	$telefonos= new telefono();
   

@@ -1,4 +1,6 @@
 <?php 
+  require_once("../model/login/security.php");
+
   require_once("../model/routing.php");
   $enrutador = new enrutador();
   if (!isset($_GET['sms'])) {
@@ -68,6 +70,7 @@
     <!--====================================DASBOARD======================================-->
     <link rel="stylesheet" href="../css/dasboard.css">
     <!--===============================================================================================--> 
+    <link rel="stylesheet" type="text/css" href="../js/pace/templates/pace-theme-corner-indicator.tmpl.css">
   </head>
 
 
@@ -152,7 +155,7 @@
           <div class="modal-body">
             <i class="fas fa-info-circle fa-5x"></i>
             <h1 class="modal-title text-center text-dark" id="cerrar">Estas seguro ?</h1> 
-            <a class="btn btn-primary" href= "../modulos/login/SesionClose.php">si, Salir</a>
+            <a class="btn btn-primary" href= "../model/login/SesionClose.php">si, Salir</a>
             <a class="btn btn-danger text-white" data-dismiss="modal">Cancelar</a>  
           </div>
         </div>
@@ -185,9 +188,8 @@
     <!-- Main File-->
     <script src="../js/front.js"></script>
     <script src="../js/jquery.validate.min.js"></script>
- 
+    <script src="../js/pace/pace.js"></script>
   </body>
 </html>
 
- solusms
- SoluAdmin10
+ 

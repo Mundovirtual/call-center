@@ -14,6 +14,10 @@
   <link rel="stylesheet" type="text/css" href="css/login/util.css">
   <link rel="stylesheet" type="text/css" href="css/login/main.css">
 <!--===============================================================================================-->
+  <!-- Alertyfy js-->
+    <link rel="stylesheet" type="text/css" href="js/alertifyjs/css/alertify.css">
+
+
 </head>
 <body>
   
@@ -28,20 +32,20 @@
           <span class="lnr lnr-phone-handset"></span>
 
         </span>
-        <form class="login100-form validate-form p-b-33 p-t-5">
+        <form class="login100-form validate-form p-b-33 p-t-5 form"  method="POST" id="login">
 
           <div class="wrap-input100" data-validate = "Enter username">
-            <input class="input100" type="text" name="username" placeholder="User name">
+            <input class="input100" type="text" name="username" id="username" placeholder="User name">
             <span class="focus-input100" data-placeholder="&#xe82a;"></span>
           </div>
 
           <div class="wrap-input100" data-validate="Enter password">
-            <input class="input100" type="password" name="pass" placeholder="Password">
+            <input class="input100" type="password" name="pass" id="pass" placeholder="Password">
             <span class="focus-input100" data-placeholder="&#xe80f;"></span>
           </div>
 
           <div class="container-login100-form-btn m-t-32">
-            <button class="login100-form-btn">
+            <button class="login100-form-btn" type="submit">
               Login
             </button>
           </div>
@@ -61,6 +65,9 @@
   <script src="js/bootstrap/bootstrap.min.js"></script>
 <!--===============================================================================================-->   
   <script src="js/mainlogin.js"></script>
+  
+  <script src="model/login/login.js"></script>
 
+  <script src="js/alertifyjs/alertify.js"></script> 
 </body>
 </html>

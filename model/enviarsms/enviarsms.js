@@ -12,8 +12,7 @@ function cargarDatos(){
 		dataType: 'json',
 		data: {"cargar": 'index'},
 	})
-	.done(function(respuesta) { 
-		 
+	.done(function(respuesta) { 		 
 		$("#InsertarIP").html(respuesta.Insertar);
 	})
 	.fail(function() {
@@ -59,7 +58,7 @@ function enviar(){
 		type: 'POST',
 		dataType: 'json',
 		data: {'mostrar_ip':$("#mostrar_ip").val(),'mostrar_usr':$("#mostrar_usr").val(),'mostrar_psw':$("#mostrar_psw").val(),'tiempo':$("#tiempo").val(),'Mensaje_Enviar':
-	$("#Mensaje_Enviar").val()},
+		$("#Mensaje_Enviar").val()},
 	})
 	.done(function(respuesta) {
 	  

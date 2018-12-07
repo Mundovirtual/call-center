@@ -1,4 +1,4 @@
-<?php 
+<?php  
 require_once("../../class/ip_cpntroller.php");
 
 	$mostrar=new ip();

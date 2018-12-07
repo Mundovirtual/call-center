@@ -1,6 +1,6 @@
 <?php
 	session_start();
 	session_destroy(); 
-	header("location:../principal/miperfil.php");
+	header("location:../../index.php");
 	exit();
 ?>
