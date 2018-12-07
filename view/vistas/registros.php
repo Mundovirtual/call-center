@@ -1,7 +1,6 @@
 <?php 
 require_once("../model/login/security.php");
- ?> 
- <link href="../pace-master/themes/pace-theme-barber-shop.css" rel="stylesheet" />
+ ?>  
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -76,8 +75,8 @@ require_once("../model/login/security.php");
  
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="guardar()">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="guardar()">Guardar</button>
       </div>
     </div>
   </div>

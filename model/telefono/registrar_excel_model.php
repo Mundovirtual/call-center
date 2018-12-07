@@ -4,9 +4,8 @@
 	require_once("../../PHPexcel/Classes/PHPExcel/IOFactory.php");
 	require_once("../../class/conexion.php");
 	$telefonos= new telefono();  
-	$errores=[];
-	$insertados=1;
-	$repetidos=1;
+	$errores=0;
+	$insertados=0; 
 	
 	 if (isset($_FILES['archivoExcel'])) {
 	 	 	$excelArchivo=$_FILES['archivoExcel'];
@@ -42,17 +41,16 @@
 						if ($insertar==1) {
 							$insertados++; 
 						}
-						else{
-							$repetidos++;
-						}
+						 
 					}else{
-						$errores[]=$i;				 
+						$errores++;				 
 					}
 					 
 				}
-				echo  json_encode(array( 'Errores'=>$errores,'insertados'=>$insertados,'repetidos'=>$repetidos)); 
+ 
+				 echo  json_encode(array( 'error'=> $errores,'insert'=>$insertados));  
 		 	}
-	 
+
     	  
 			
  			 

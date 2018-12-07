@@ -24,8 +24,7 @@
 	if (isset($_POST['mostrar_ip']) and  isset($_POST['mostrar_usr']) and isset($_POST['mostrar_psw'])  and isset($_POST['Mensaje_Enviar'])) {
 		$ip=$_POST['mostrar_ip'];
 		$user=$_POST['mostrar_usr'];
-		$psw=$_POST['mostrar_psw'];
-		$time=$_POST['tiempo'];
+		$psw=$_POST['mostrar_psw']; 
 		$mensaje=filter_var($_POST['Mensaje_Enviar'],FILTER_SANITIZE_STRING);
 		$msj="";
 		$Aux="0";

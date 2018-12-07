@@ -33,12 +33,13 @@ function excel(){
             contentType: false,
             data: data,
             processData: false,
-            cache: false
-        }).done(function(data){
-
-             alertify.success(data.Errores);
-             alertify.error(data.insertados);
-        	 alertify.error(data.repetidos);
+            cache: false,
+             beforeSend:function(){
+             Pace.restart ();
+         },
+         }).done(function(res){ 
+            alertify.success("se ha exportado con Éxito"); 
+             $("#exampleModal").modal('hide');
              telefonos();
         });
   }
