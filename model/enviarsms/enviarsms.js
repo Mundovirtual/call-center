@@ -28,16 +28,16 @@ function enviarsms(){
 		alertify.error("Selecciona una opción de envío");
 	}
 	else if (seleccion=='1') {
-		enviar_DB();
+		enviar_DB();	
 	}
 	else if (seleccion=='2') {
 		 
 		 if (importado=="0") {
 			alertify.error("No has subido un archivo"); 
 			alertify.error("Selecciona una opción de envío");
-			
+
 		 }else if (importado=="1") {
-		 	
+
 		 }
 	}
 }
@@ -107,10 +107,10 @@ function enviar_DB(){
 		 }
 		 else{		 	 
 		 	alertify.success("Enviando.....");		 	   
-		 	 $.each(respuesta.arrayUrl, function(i, item) {
+		 	/* $.each(respuesta.arrayUrl, function(i, item) {
 		 		console.log(item);
 			     window.open(item);			     
-			}); 
+			}); */
 			 
 		 } 
 	})

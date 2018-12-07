@@ -52,12 +52,32 @@
 
 			 
 			 foreach ($EnviarSMS as $key) {
-				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
+				/*$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
 			 	 	
-				   $url[]=$enviando;
+				   $url[]=$enviando;*/
+ 
+				$user = "application\\" . $key . ":" . $psw;    
+				$message = array("message"=>$MensajeUrl);   				 
+				$data = json_encode($message);    
+				 $ch = curl_init('https://'.$ip.'/sendsms/' . $key);    
+					curl_setopt($ch, CURLOPT_POST, true);    
+					curl_setopt($ch, CURLOPT_USERPWD,$user);    
+					curl_setopt($ch, CURLOPT_POSTFIELDS, $data);    
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    
+					curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);    
+					curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));    
+					$result = curl_exec($ch);    
+					if(curl_errno($ch)) {    
+					    echo 'Curl error: ' . curl_error($ch);    
+					} else {    
+						echo $result;    
+					}   
+					curl_close($ch);    
+			} 
+							 
 			} 
 	 
-		}
+	 
  	 	echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
  	 
 	}
