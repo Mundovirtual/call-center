@@ -26,7 +26,7 @@ class admin{
 	function existe($usr,$psw){
 			$con=new Conectar();
 	 		$Conexion=$con->conexion();
-	 		$sql="SELECT `id`, `Nombre`, `usuario`, `psw` FROM `usuario` WHERE `usuario`='$usr' and `psw`='$psw'";
+	 		$sql="SELECT `id`, `Nombre`, `usuario`, `psw` FROM `usuario` WHERE `usuario`='$usr' and `psw`='$psw'"; 
 	 		$resultado=mysqli_query($Conexion,$sql); 
 	 		return  mysqli_fetch_all($resultado);
 	 		$Conexion->mysql_close();
