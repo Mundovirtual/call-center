@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login V16</title>
+  <title>CALL-CENTER</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -28,7 +28,7 @@
         <span class="login100-form-title p-b-41">
            
           <span class="lnr lnr-phone"></span>
-           SMS CENTER
+           CALL-CENTER
           <span class="lnr lnr-phone-handset"></span>
 
         </span>
