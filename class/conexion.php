@@ -11,8 +11,7 @@ private $servidor="localhost";
 			$conexion=mysqli_connect($this->servidor,
 									 $this->usuario,
 									 $this->password,
-									 $this->bd);
-			$conexion->query("SET NAMES 'utf8';");
+									 $this->bd); 
 
 			return $conexion;
 		}
