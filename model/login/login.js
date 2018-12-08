@@ -22,8 +22,11 @@ jQuery(document).on('submit','#login',function(event){
  			window.location.href = "view/index.php";
  		}
  	})
- 	.fail(function( jqXHR, textStatus ) {
-  alert( "Request failed: " + textStatus );
+ 	.fail(function( jqXHR, textStatus, errorThrown ) {
+    // Un callback .fail()
+	    alert(jqXHR);
+	    alert(textStatus);
+	    alert(errorThrown);
  	})
  	.always(function() {
  		console.log("complete");
