@@ -1,6 +1,6 @@
 <?php 
 
-//require_once("../model/login/security.php");
+ 	require_once("../model/login/security.php");
  ?> 
  <div class="container-fluid">
  	<!--==========================TITLE===========================================-->

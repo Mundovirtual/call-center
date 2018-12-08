@@ -22,8 +22,8 @@ jQuery(document).on('submit','#login',function(event){
  			window.location.href = "view/index.php";
  		}
  	})
- 	.fail(function() {
- 		console.log("error");
+ 	.fail(function( jqXHR, textStatus ) {
+  alert( "Request failed: " + textStatus );
  	})
  	.always(function() {
  		console.log("complete");
