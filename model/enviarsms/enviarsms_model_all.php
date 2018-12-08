@@ -5,7 +5,8 @@
  
 
 	$mostrar=new ip();
-	$url=[];
+	$errores=[];
+	$enviados=[];
 	if (isset($_POST['cargar'])) {
 
 		$vertabla=$mostrar->index();
@@ -49,9 +50,7 @@
 		 
 			$MensajeUrl= urlencode($mensaje);
 
-
-			 
-			 foreach ($EnviarSMS as $key) {
+ 			 foreach ($EnviarSMS as $key) {
 				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
 	 
  			 
@@ -72,15 +71,15 @@
 				  $err=curl_error($ch);
 
 				  if ($err) {
-				  		echo "cURl Error #:".$err;
+				  		$errores[]="cURl Error #:".$err."<br>";
 				  }else{
-				  		echo "Mensaje entregado satisfactoriamente al numero ".$key['1']."  ".$response."<br>";
+				  		$enviados[]= $response."<br>";
 				  }
 		} 
 	 
 	 
- 	 	//echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
- 	 
+ 	 	echo  json_encode(array( 'Enviar'=> $msj,'enviandos'=>$enviados,'errores'=>$errores)); 
+ 	 	
 	}
 
 

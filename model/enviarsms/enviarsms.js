@@ -96,22 +96,29 @@ function enviar_DB(){
 		dataType: 'json',
 		data: {'mostrar_ip':$("#mostrar_ip").val(),'mostrar_usr':$("#mostrar_usr").val(),'mostrar_psw':$("#mostrar_psw").val(),'tiempo':$("#tiempo").val(),'Mensaje_Enviar':
 		$("#Mensaje_Enviar").val()},
-		 beforeSend:function(){
-             Pace.restart ();
-         },
+		     beforeSend: function(){
+		     	alertify.success("Enviando");
+   				$("#csscargando").show();
+				$("#FormularioOcultar").fadeOut();
+		   },
+		   complete: function(){
+		      	$("#csscargando").hide();
+				$("#FormularioOcultar").fadeIn();
+		   }
 	})
+
 	.done(function(respuesta) {
-	  	 
+	  	 Pace.start();
+
 		 if (respuesta.Enviar !='0') {
 		 	alertify.error(respuesta.Enviar );
+		 	 
 		 }
 		 else{		 	 
-		 	alertify.success("Enviando.....");		 	   
-		 	/* $.each(respuesta.arrayUrl, function(i, item) {
-		 		console.log(item);
-			     window.open(item);			     
-			}); */
-			 
+		 		  	
+		 	alertify.success(respuesta.enviandos.length+ "Mensajes enviados");
+		 	alertify.success(respuesta.errores.length+" Mensajes fallidos");
+		 
 		 } 
 	})
 	.fail(function() {
@@ -153,4 +160,5 @@ function cargarExcel(){
 		}
         
   }
+ 
  

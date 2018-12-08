@@ -1,7 +1,23 @@
 <?php 
 	require_once("../model/login/security.php"); 
  ?>
-<div class="container-fluid">
+
+
+
+
+	 <div class="cssload-thecube" id="csscargando" name="csscargando" style="display: none;">
+		<div class="cssload-cube cssload-c1"></div>
+		<div class="cssload-cube cssload-c2"></div>
+		<div class="cssload-cube cssload-c4"></div>
+		<div class="cssload-cube cssload-c3"></div>
+	</div>
+
+
+
+
+ 	
+<div  id="FormularioOcultar" name="FormularioOcultar">
+	<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
 			<h1 class="text-center">
@@ -9,8 +25,9 @@
 			</h1>
 		</div>
 	</div>
- 	
- 	<div class="row">
+
+
+	<div class="row">
  		<div class="col-md-6">
  			<div class="input-group mb-2">
 			  <div class="input-group-prepend">
@@ -86,6 +103,7 @@
 	</div> 
 </div>
 
+</div>	
 
 
 <!-- Modal IMPOrtar -->
@@ -121,4 +139,6 @@
     </div>
   </div>
 </div>	
+
+
  <script src="../model/enviarsms/enviarsms.js"></script> 
