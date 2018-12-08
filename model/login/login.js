@@ -6,7 +6,7 @@ jQuery(document).on('submit','#login',function(event){
  	let pass=$("#pass").val();  
 
  	$.ajax({
- 		url: 'https://192.168.0.20/call-center/model/login/login.php',
+ 		url: 'model/login/login.php',
  		type: 'POST',
  		dataType: 'json',
  		data: {'usuario':username,'pass':btoa(pass)},
@@ -22,9 +22,8 @@ jQuery(document).on('submit','#login',function(event){
  			window.location.href = "view/index.php";
  		}
  	})
- 	.fail(function( jqXHR, textStatus, errorThrown ) {
-    // Un callback .fail() 
-	    alert(errorThrown);
+ 	.fail(function() {
+ 		console.log("error");
  	})
  	.always(function() {
  		console.log("complete");
