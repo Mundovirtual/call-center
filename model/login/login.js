@@ -6,7 +6,7 @@ jQuery(document).on('submit','#login',function(event){
  	let pass=$("#pass").val();  
 
  	$.ajax({
- 		url: 'model/login/login.php',
+ 		url: 'call-center/model/login/login.php',
  		type: 'POST',
  		dataType: 'json',
  		data: {'usuario':username,'pass':btoa(pass)},
