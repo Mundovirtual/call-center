@@ -4,12 +4,15 @@
 
 
 
+	<div id="csscargando" name="csscargando" style="display: none;">
+		<div class="h3 text-center">Cargando.....</div>
+		 <div class="cssload-thecube" >
 
-	 <div class="cssload-thecube" id="csscargando" name="csscargando" style="display: none;">
-		<div class="cssload-cube cssload-c1"></div>
-		<div class="cssload-cube cssload-c2"></div>
-		<div class="cssload-cube cssload-c4"></div>
-		<div class="cssload-cube cssload-c3"></div>
+			<div class="cssload-cube cssload-c1"></div>
+			<div class="cssload-cube cssload-c2"></div>
+			<div class="cssload-cube cssload-c4"></div>
+			<div class="cssload-cube cssload-c3"></div>
+		 </div>
 	</div>
 
 
