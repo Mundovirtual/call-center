@@ -45,8 +45,7 @@
    						}
 				
 		 	}
-	  	$_SESSION['telefonos']=$telefonos;
-	  	var_dump($_SESSION['telefonos']);
+	  	$_SESSION['telefonos']=$telefonos; 
 }
  
 /*Enviar msj*/
