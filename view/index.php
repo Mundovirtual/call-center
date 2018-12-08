@@ -54,7 +54,9 @@
     <!-- Alertyfy js-->
     <link rel="stylesheet" type="text/css" href="../js/alertifyjs/css/alertify.css">
 
-    <!--===============================================================================================--> 
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="../css/efecto_carga.css"> 
+
     <!-- Fontastic Custom icon font-->
     <link rel="stylesheet" href="../css/fontastic.css">
     <script src="../js/jquery/jquery.min.js"></script>

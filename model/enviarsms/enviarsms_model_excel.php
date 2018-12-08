@@ -44,10 +44,7 @@
 	  
 }
  
-echo $_POST['mostrar_ip'];
-echo $_POST['mostrar_usr'];
-echo $_POST['mostrar_psw'];
-echo $_POST['Mensaje_Enviar'];
+ 
 
 /*Enviar msj*/
 if (isset($_POST['mostrar_ip']) and  isset($_POST['mostrar_usr']) and isset($_POST['mostrar_psw'])  and isset($_POST['Mensaje_Enviar'])) { 

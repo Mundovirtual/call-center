@@ -5,7 +5,8 @@
  
 
 	$mostrar=new ip();
-	$url=[];
+	$errores=[];
+	$enviados=[];
 	if (isset($_POST['cargar'])) {
 
 		$vertabla=$mostrar->index();
@@ -49,18 +50,42 @@
 		 
 			$MensajeUrl= urlencode($mensaje);
 
-
-			 
-			 foreach ($EnviarSMS as $key) {
+ 			 foreach ($EnviarSMS as $key) {
 				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
-			 	 	
-				   $url[]=$enviando;
-			} 
 	 
-		}
- 	 	echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
- 	 
+ 			 
+				 $ch = curl_init();
+				  curl_setopt_array($ch, array(
+				  	CURLOPT_URL=>$enviando,
+				  	CURLOPT_RETURNTRANSFER =>true,
+				  	CURLOPT_ENCODING=>"",
+				  	CURLOPT_MAXREDIRS=>10,
+				  	CURLOPT_TIMEOUT=>30,
+				  	CURLOPT_HTTP_VERSION=>CURL_HTTP_VERSION_1_1, 
+				  	CURLOPT_CUSTOMREQUEST=>"GET",
+				  	CURLOPT_SSL_VERIFYHOST=>0,
+				  	CURLOPT_SSL_VERIFYPEER=>0,
+				  ));
+
+				  $response=curl_exec($ch);
+				  $err=curl_error($ch);
+
+				  if ($err) {
+				  		$errores[]="cURl Error #:".$err."<br>";
+				  }else{
+				  		$enviados[]= $response."<br>";
+				  }
+		} 
+	 
+	 
+ 	 	echo  json_encode(array( 'Enviar'=> $msj,'enviandos'=>$enviados,'errores'=>$errores)); 
+ 	 	
 	}
+
+
+
  
- 
+ }
+
+
  ?>
