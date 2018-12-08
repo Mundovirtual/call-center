@@ -1,5 +1,5 @@
 <?php 
- header($_SERVER['SERVER_PROTOCOL'] . '200 OK');
+ 
 require_once("../../class/administrador_controller.php");
 
 	if (isset($_POST['usuario']) and isset($_POST['pass'])) {
