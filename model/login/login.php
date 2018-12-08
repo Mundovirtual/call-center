@@ -1,10 +1,10 @@
 <?php 
- echo $_POST['usuario']."<br>";
-echo $_POST['pass']."<br>";
+ 
 require_once("../../class/administrador_controller.php");
-	if (isset($_POST['usuario']) and isset($_POST['pass'])) {
-		$msj="";
+$msj="";
 		$aux="0";
+	if (isset($_POST['usuario']) and isset($_POST['pass'])) {
+		
 
 
 		 $login=new admin();
@@ -21,7 +21,7 @@ require_once("../../class/administrador_controller.php");
 				$_SESSION['id'] =$validar[0];
 				$_SESSION['usr'] = "06222018";  
 		 }
-		 echo  json_encode(array( 'aux'=> $aux,'msj'=>$msj)); 
+		 
 	}
-
+echo  json_encode(array( 'aux'=> $aux,'msj'=>$msj)); 
  ?>
