@@ -9,7 +9,7 @@ jQuery(document).on('submit','#login',function(event){
  		url: 'model/login/login.php',
  		type: 'POST',
  		dataType: 'json',
- 		data: {'usuario':username,'pass':pass},
+ 		data: {'usuario':username,'pass':btoa(pass)},
  		 
  	})
  	.done(function(res) { 
