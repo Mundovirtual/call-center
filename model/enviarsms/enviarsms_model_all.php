@@ -52,35 +52,41 @@
 
 			 
 			 foreach ($EnviarSMS as $key) {
-				/*$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
-			 	 	
-				   $url[]=$enviando;*/
- 
-				$user = "application\\" . $key . ":" . $psw;    
-				$message = array("message"=>$MensajeUrl);   				 
-				$data = json_encode($message);    
-				 $ch = curl_init('https://'.$ip.'/sendsms/' . $key);    
-					curl_setopt($ch, CURLOPT_POST, true);    
-					curl_setopt($ch, CURLOPT_USERPWD,$user);    
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $data);    
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    
-					curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);    
-					curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));    
-					$result = curl_exec($ch);    
-					if(curl_errno($ch)) {    
-					    echo 'Curl error: ' . curl_error($ch);    
-					} else {    
-						echo $result;    
-					}   
-					curl_close($ch);    
-			} 
-							 
-			} 
+				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
+	 
+ 			 
+				 $ch = curl_init();
+				  curl_setopt_array($ch, array(
+				  	CURLOPT_URL=>$enviando,
+				  	CURLOPT_RETURNTRANSFER =>true,
+				  	CURLOPT_ENCODING=>"",
+				  	CURLOPT_MAXREDIRS=>10,
+				  	CURLOPT_TIMEOUT=>30,
+				  	CURLOPT_HTTP_VERSION=>CURL_HTTP_VERSION_1_1, 
+				  	CURLOPT_CUSTOMREQUEST=>"GET",
+				  	CURLOPT_SSL_VERIFYHOST=>0,
+				  	CURLOPT_SSL_VERIFYPEER=>0,
+				  ));
+
+				  $response=curl_exec($ch);
+				  $err=curl_error($ch);
+
+				  if ($err) {
+				  		echo "cURl Error #:".$err;
+				  }else{
+				  		echo "Mensaje entregado satisfactoriamente al numero ".$key['1']."  ".$response."<br>";
+				  }
+		} 
 	 
 	 
- 	 	echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
+ 	 	//echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
  	 
 	}
+
+
+
  
- 
+ }
+
+
  ?>
