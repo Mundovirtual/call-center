@@ -96,13 +96,12 @@ function enviar_DB(){
 		dataType: 'json',
 		data: {'mostrar_ip':$("#mostrar_ip").val(),'mostrar_usr':$("#mostrar_usr").val(),'mostrar_psw':$("#mostrar_psw").val(),'tiempo':$("#tiempo").val(),'Mensaje_Enviar':
 		$("#Mensaje_Enviar").val()},
-		     beforeSend: function(){
-		     	alertify.success("Enviando");
+		     beforeSend: function(){ 
    				$("#csscargando").show();
-				$("#FormularioOcultar").fadeOut();
+				$("#FormularioOcultar").fadeOut(1000);
 		   },
 		   complete: function(){
-		      	$("#csscargando").hide();
+		      	$("#csscargando").hide(1000);
 				$("#FormularioOcultar").fadeIn();
 		   }
 	})

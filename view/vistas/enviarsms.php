@@ -5,7 +5,7 @@
 
 
 	<div id="csscargando" name="csscargando" style="display: none;">
-		<div class="h3 text-center">Cargando.....</div>
+		<div class="h3 text-center">Enviando.....</div>
 		 <div class="cssload-thecube" >
 
 			<div class="cssload-cube cssload-c1"></div>
