@@ -4,7 +4,7 @@ require_once("../model/login/security.php");
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 align="center">Registro de telefonos</h1>
+			<h1 align="center">Registro de teléfonos </h1>
 		</div>
 	</div>
 	<div class="row">
@@ -28,7 +28,7 @@ require_once("../model/login/security.php");
 			<table class="table table-bordered table-dark" id="tablaTelefono">
 				  <thead>
 				   <th scope="col">#</th>
-				   <th scope="col">Telefono</th>
+				   <th scope="col">teléfonos </th>
 					<th scope="col">Eliminar</th>
 				  </thead>
 				  <tbody>
@@ -49,7 +49,7 @@ require_once("../model/login/security.php");
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Registrar telefonos</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Registrar teléfonos</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -57,7 +57,7 @@ require_once("../model/login/security.php");
       <div class="modal-body">
         <form id="datos_Tel" name="datos_Tel">
         	 <div class="form-group row">
-		    <label for="colFormLabel" class="col-sm-2 col-form-label fas fa-plus-circle"> Telefono</label>
+		    <label for="colFormLabel" class="col-sm-2 col-form-label fas fa-plus-circle">teléfono</label>
 		    <div class="col-sm-10">
 		      <input type="tel" class="form-control" id="telefono_teclado" name="telefono_teclado" placeholder="492 666 55 66">
 		    </div>

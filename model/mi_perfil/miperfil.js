@@ -50,7 +50,7 @@
 				.done(function(respuesta) {
 					if (respuesta.Editar=="0") {
 
-						alertify.success('Datos actualizados');
+						alertify.success('Dato actualizado');
 						$("#EditarPerfil").text('Editar');  
 						deshabilitarInput();
 

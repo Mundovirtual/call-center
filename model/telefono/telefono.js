@@ -60,7 +60,7 @@ function excel(){
              Pace.restart ();
          },
          }).done(function(res){ 
-            alertify.success("se ha exportado con Éxito"); 
+            alertify.success("se ha importado con Éxito"); 
              $("#exampleModal").modal('hide');
              telefonos();
         });
@@ -79,7 +79,7 @@ function input(){
 	.done(function(res) {
 		if (res.InsertarTelefono==0) {
             telefonos();
-			alertify.success("Numero registrado");
+			alertify.success("Número registrado");
 			$("#telefono_teclado").val("");
 
 		}else{

@@ -58,7 +58,7 @@ if (isset($_POST['mostrar_ip']) and  isset($_POST['mostrar_usr']) and isset($_PO
 		$Aux="0";
 
 		if (!filter_var($ip,FILTER_VALIDATE_IP)) {
-			$msj="Ip: Seleccione una ip";
+			$msj="Ip: Selecciona una ip";
 			$Aux="1";
 		}elseif(strlen($user)<3){
 			$msj="Usuario: Usuario no valido";

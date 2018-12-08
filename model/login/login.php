@@ -12,7 +12,7 @@ require_once("../../class/administrador_controller.php");
 		 $validar=$login->existe($usr,$pass);
   
 		 if (empty($validar)) {
-		  	 $msj="Datos Inválidos ... Vuelva a intentar"; 
+		  	 $msj="Datos Inválidos ..."; 
 		  	 $aux="1";
 		 }else if($aux=='0'){
 		 		session_start();

@@ -64,13 +64,7 @@ function enviarSMSEXCEl(){
 		 	alertify.success(respuesta.errores.length+" Mensajes fallidos");
 		 
 		 } 
-	})
-	.fail(function() {
-		console.log("error");
-	})
-	.always(function() {
-		console.log("complete");
-	});
+	}) 
 }
 
 
@@ -88,13 +82,7 @@ function cargarDatos(){
 	})
 	.done(function(respuesta) { 		 
 		$("#InsertarIP").html(respuesta.Insertar);
-	})
-	.fail(function() {
-		console.log("error");
-	})
-	.always(function() {
-		console.log("complete");
-	});	
+	}) 
 }
   
 

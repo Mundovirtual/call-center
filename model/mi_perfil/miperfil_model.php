@@ -21,16 +21,16 @@ require_once("../../class/administrador_controller.php");
 		$Aux="0";
 
 		if (strlen($Nombre)<10) {
-			$msj="Nombre: Longitud minima de 10 caracteres"; 
+			$msj="Nombre: Longitud mínima  de 10 caracteres"; 
 			$Aux="1";
 		}elseif(!is_string($Nombre)){
 			$msj="Nombre: Números no permitidos"; 
 			$Aux="1";
 		}elseif (strlen($Usuario)<4) {
-			 $msj="Usuario: Longitud minima de 4 caracteres ";
+			 $msj="Usuario: Longitud mínima  de 4 caracteres ";
 			 $Aux="1";
 		}elseif (strlen($Psw)<4) {
-			 $msj="Contraseña: Longitud minima de 4 caracteres";
+			 $msj="Contraseña: Longitud mínima  de 4 caracteres";
 			 $Aux="1";
 		}elseif ($Aux=="0") {
 			 $update=$mostrar->editar($id,$Nombre,$Usuario,$Psw);  
