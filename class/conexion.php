@@ -4,7 +4,7 @@ class Conectar{
  
 private $servidor="localhost";
 		private $usuario="root";
-		private $bd="call-center";
+		private $bd="SoluAdmin10";
 		private $password=""; 
  
 		public function conexion(){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-12-2018 a las 17:19:31
+-- Tiempo de generación: 08-12-2018 a las 17:59:14
 -- Versión del servidor: 5.7.23
 -- Versión de PHP: 7.2.10
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `call-center`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ip`
+--
+
+DROP TABLE IF EXISTS `ip`;
+CREATE TABLE IF NOT EXISTS `ip` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(15) NOT NULL,
+  `usr` varchar(100) NOT NULL,
+  `psw` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ip_UNIQUE` (`ip`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `ip`
+--
+
+INSERT INTO `ip` (`id`, `ip`, `usr`, `psw`) VALUES
+(2, '192.168.0.200', 'solusms', 'U29sdUFkbWluMTA=');
 
 -- --------------------------------------------------------
 
@@ -46,6 +69,29 @@ INSERT INTO `telefonos` (`id`, `telefono`) VALUES
 (16, '4921267908'),
 (20, '9531687356'),
 (1, '9531879867');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(60) NOT NULL,
+  `usuario` varchar(45) NOT NULL,
+  `psw` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `Nombre`, `usuario`, `psw`) VALUES
+(1, 'Isaac Santiago Coronel', 'admin', 'YWRtaW4=');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
