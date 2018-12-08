@@ -4,8 +4,8 @@ class Conectar{
  
 private $servidor="localhost";
 		private $usuario="root";
-		private $bd="callcenter";
-		private $password="SoluAdmin10"; 
+		private $bd="call-center";
+		private $password=""; 
  
 		public function conexion(){
 			$conexion=mysqli_connect($this->servidor,
