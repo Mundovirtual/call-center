@@ -1,7 +1,6 @@
 <?php 
-
-
-echo "asdasd";
+ echo $_POST['usuario']."<br>";
+echo $_POST['pass']."<br>";
 require_once("../../class/administrador_controller.php");
 	if (isset($_POST['usuario']) and isset($_POST['pass'])) {
 		$msj="";
