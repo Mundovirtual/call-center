@@ -18,5 +18,9 @@ private $servidor="localhost";
 		}
 
 	}
+
+echo "holas";
+	$jo=new Conectar();
+	echo $jo->conexion();
  
 ?>
