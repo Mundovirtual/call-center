@@ -5,7 +5,29 @@ $( document ).ready(function() {
 		 
 });
 
-
+function eliminarTEl(id){/*delete_phone_model.php*/
+    $.ajax({
+        url: '../model/telefono/delete_phone_model.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {'iddel': id},
+    })
+    .done(function(resp) {
+        if (resp.Eliminar=='0') {
+             alertify.success("teléfono eliminado"); 
+             telefonos();
+        }else{
+             alertify.error(resp.Eliminar);
+        }
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+     
+}
 
 function guardar() {
         if ($("#telefono_teclado").val()!="") {
@@ -93,7 +115,8 @@ function input(){
  
         "columns": [ 
             { "data": "id" },
-            { "data": "tel" }  
+            { "data": "tel" },
+            { "data": "eliminar" } 
         ],
         "oLanguage": {
             "sProcessing": "Procesando...",

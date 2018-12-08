@@ -29,7 +29,7 @@ require_once("../model/login/security.php");
 				  <thead>
 				   <th scope="col">#</th>
 				   <th scope="col">Telefono</th>
-
+					<th scope="col">Eliminar</th>
 				  </thead>
 				  <tbody>
 				    
