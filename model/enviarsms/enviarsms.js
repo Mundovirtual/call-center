@@ -5,9 +5,7 @@ $( document ).ready(function() {
 		 
 });
 
-/*Aux importar*/
-let importado="0";
-
+ 
 let seleccion="";
 
 function DB(){
@@ -16,8 +14,7 @@ function DB(){
 }
 
 function EX(){
-	seleccion="2";
-	alertify.success("importa los datos Teléfonicos");	
+	seleccion="2"; 
 	$("#exampleModal").modal('show');
  
 }
@@ -32,15 +29,53 @@ function enviarsms(){
 	}
 	else if (seleccion=='2') {
 		 
-		 if (importado=="0") {
-			alertify.error("No has subido un archivo"); 
-			alertify.error("Selecciona una opción de envío");
-
-		 }else if (importado=="1") {
-
-		 }
+		   enviarSMSEXCEl();
 	}
 }
+
+
+function enviarSMSEXCEl(){
+	$.ajax({
+		url: '../model/enviarsms/enviarsms_model_excel.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {'mostrar_ip':$("#mostrar_ip").val(),'mostrar_usr':$("#mostrar_usr").val(),'mostrar_psw':$("#mostrar_psw").val(),'Mensaje_Enviar':
+		$("#Mensaje_Enviar").val()},
+		     beforeSend: function(){ 
+   				$("#csscargando").show();
+				$("#FormularioOcultar").fadeOut(1000);
+		   },
+		   complete: function(){
+		      	$("#csscargando").hide(1000);
+				$("#FormularioOcultar").fadeIn();
+		   }
+	})
+
+	.done(function(respuesta) {
+	  	 Pace.start();
+
+		 if (respuesta.Enviar !='0') {
+		 	alertify.error(respuesta.Enviar );
+		 	 
+		 }
+		 else{		 	 
+		 		  	
+		 	alertify.success(respuesta.enviandos.length+ "Mensajes enviados");
+		 	alertify.success(respuesta.errores.length+" Mensajes fallidos");
+		 
+		 } 
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
+}
+
+
+
+
 
  
 
@@ -152,8 +187,7 @@ function cargarExcel(){
          },
         }).done(function(data){
              alertify.success("Teléfonos importados"); 
-             $("#excel").val("");
-             importado="1";
+             $("#excel").val(""); 
              $("#exampleModal").modal('hide');
         });
 		}

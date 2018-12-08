@@ -11,9 +11,6 @@ require_once("../model/login/security.php");
 						<i class="fas fa-user-circle fa-8x"></i>
 					</div>
 
-					<div class="form-group">
-						<h3 class="text-center">hola</h3>
-					</div>
 					<div class="row">	
 						<button class="form-control btn btn-primary">Bienvenid@</button>
 					</div>

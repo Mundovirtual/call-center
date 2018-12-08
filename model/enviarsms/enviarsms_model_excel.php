@@ -1,9 +1,13 @@
 <?php 
+	session_start();
+
 	set_time_limit(4800);  
 	require_once("../../PHPexcel/Classes/PHPExcel/IOFactory.php");
 	require_once("../../class/conexion.php");
 /*Importar desde excel*/
+	
 	$errores=[];
+	$enviados=[];
 	$telefonos=[];
 
 
@@ -41,11 +45,10 @@
    						}
 				
 		 	}
-	  
+	  	$_SESSION['telefonos']=$telefonos;
+	  	var_dump($_SESSION['telefonos']);
 }
  
- 
-
 /*Enviar msj*/
 if (isset($_POST['mostrar_ip']) and  isset($_POST['mostrar_usr']) and isset($_POST['mostrar_psw'])  and isset($_POST['Mensaje_Enviar'])) { 
 		$ip=$_POST['mostrar_ip'];
@@ -67,24 +70,46 @@ if (isset($_POST['mostrar_ip']) and  isset($_POST['mostrar_usr']) and isset($_PO
 		}else if (strlen($mensaje)<3) {
 			$msj="Mensaje: Mínimo 3 caracteres ";
 			$Aux="1";	 
-		}elseif ($Aux=='0') {
-			$msj=0;
-			$msj="0";
-			$mostrar=new telefono();
-			$EnviarSMS=$mostrar->index();
+		}else if(empty($_SESSION['telefonos'])){
+			$msj="No has seleccionado los Números teléfonicos";
+			$Aux="1";
+		}
+		elseif ($Aux=='0') { 
+			$msj="0"; 
 		 
 			$MensajeUrl= urlencode($mensaje);
 
 
 			 
-			 foreach ($EnviarSMS as $key) {
+			foreach ($_SESSION['telefonos'] as $key) {
 				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
-			 	 	
-				   $url[]=$enviando;
-			} 
+	  		 
+				 $ch = curl_init();
+				  curl_setopt_array($ch, array(
+				  	CURLOPT_URL=>$enviando,
+				  	CURLOPT_RETURNTRANSFER =>true,
+				  	CURLOPT_ENCODING=>"",
+				  	CURLOPT_MAXREDIRS=>10,
+				  	CURLOPT_TIMEOUT=>30,
+				  	CURLOPT_HTTP_VERSION=>CURL_HTTP_VERSION_1_1, 
+				  	CURLOPT_CUSTOMREQUEST=>"GET",
+				  	CURLOPT_SSL_VERIFYHOST=>0,
+				  	CURLOPT_SSL_VERIFYPEER=>0,
+				  ));
+
+				  $response=curl_exec($ch);
+				  $err=curl_error($ch);
+
+				  if ($err) {
+				  		$errores[]="cURl Error #:".$err."<br>";
+				  }else{
+				  		$enviados[]= $response."<br>";
+				  }
 	 
 		}
- 	 	echo  json_encode(array( 'Enviar'=> $msj,'arrayUrl'=>$url)); 
- 	 
+			 
 	}
+		echo  json_encode(array( 'Enviar'=> $msj,'enviandos'=>$enviados,'errores'=>$errores)); 
+		 
+}
 ?>
