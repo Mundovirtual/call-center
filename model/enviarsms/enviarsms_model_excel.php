@@ -78,12 +78,12 @@ if (isset($_POST['mostrar_ip']) and  isset($_POST['mostrar_usr']) and isset($_PO
 		 
 			$MensajeUrl= urlencode($mensaje);
 
+ 
 
-			 
 			foreach ($_SESSION['telefonos'] as $key) {
-				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
+				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key."&message=".$MensajeUrl;
 	  		 
-				 $ch = curl_init();
+			 $ch = curl_init();
 				  curl_setopt_array($ch, array(
 				  	CURLOPT_URL=>$enviando,
 				  	CURLOPT_RETURNTRANSFER =>true,

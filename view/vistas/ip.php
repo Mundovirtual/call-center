@@ -172,7 +172,7 @@ require_once("../model/login/security.php");
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" onclick="Eliminarip()">Guardar</button>
+        <button type="button" class="btn btn-danger" onclick="Eliminarip()">Eliminar</button>
       </div>
     </div>
   </div>
