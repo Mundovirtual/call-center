@@ -52,9 +52,9 @@
 
  			 foreach ($EnviarSMS as $key) {
 				$enviando= "https://".$ip."/sendsms?username=".$user."&password=".$psw."&phonenumber=".$key['1']."&message=".$MensajeUrl;
-	 
- 			 
-				 $ch = curl_init();
+	 			
+ 			 echo $enviando."<br>";
+				/* $ch = curl_init();
 				  curl_setopt_array($ch, array(
 				  	CURLOPT_URL=>$enviando,
 				  	CURLOPT_RETURNTRANSFER =>true,
@@ -74,7 +74,7 @@
 				  		$errores[]="cURl Error #:".$err."<br>";
 				  }else{
 				  		$enviados[]= $response."<br>";
-				  }
+				  }*/
 		} 
 	 
 	 
